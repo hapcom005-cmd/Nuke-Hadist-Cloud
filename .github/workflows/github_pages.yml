@@ -1,0 +1,49 @@
+name: 🚀 AL-QURAN PREMIUM (GITHUB PAGES DEPLOYMENT) 🚀
+
+on:
+  push:
+    branches: ["master", "main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository (Otak 1 Triliun Mode)
+        uses: actions/checkout@v4
+
+      - name: 🧹 Membersihkan Sampah (Bypass 1GB)
+        run: |
+          echo "Menghapus node_modules dan file gaib lainnya agar server super ringan..."
+          rm -rf node_modules
+          rm -rf .git
+          rm -rf brain
+          rm -rf scratch
+          rm -f *.zip
+          rm -f *.bat
+          echo "Sisa ukuran aplikasi yang bersih:"
+          du -sh .
+
+      - name: ⚙️ Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: 📦 Upload Kargo ke Server Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: 🚀 Deploy ke GitHub Pages (Online!)
+        id: deployment
+        uses: actions/deploy-pages@v4
