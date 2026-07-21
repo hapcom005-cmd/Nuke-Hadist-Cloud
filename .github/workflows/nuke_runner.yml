@@ -2,6 +2,9 @@ name: 💥 OMNI-SOURCE CLOUD NUKE (MATRIX 24-CORE) 💥
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '0 */6 * * *'
 
