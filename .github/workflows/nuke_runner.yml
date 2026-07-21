@@ -1,4 +1,4 @@
-name: 💥 OMNI-SOURCE CLOUD NUKE 💥
+name: 💥 OMNI-SOURCE CLOUD NUKE (MATRIX 24-CORE) 💥
 
 on:
   workflow_dispatch:
@@ -11,6 +11,12 @@ permissions:
 jobs:
   translate:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Kita membuka 10 Virtual Machine Microsoft secara bersamaan!
+        chunk: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      fail-fast: false # Jika 1 VM gagal, yang lain tetap menembak!
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -20,16 +26,14 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Dependencies
-        run: npm install axios || true
-
-      - name: Run Cloud Nuke Engine
-        run: node cloud_nuke.js
+      - name: Run Cloud Nuke Matrix Engine
+        run: node cloud_nuke_matrix.js ${{ matrix.chunk }}
 
       - name: Auto-Commit and Push Data
         run: |
           git config --global user.name "Nova (Antigravity AI)"
           git config --global user.email "nova-ai@github.com"
+          git pull --rebase origin master || true
           git add QuranHadist/data/hadist_lang/*
-          git commit -m "🤖 Auto-Translate Data Updated by Nova" || echo "No changes to commit"
+          git commit -m "🤖 [Matrix VM-${{ matrix.chunk }}] Auto-Translate Updated" || echo "No changes"
           git push
