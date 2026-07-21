@@ -1,0 +1,9 @@
+function getAudioUrl(surahNo, ayatNo) {
+            const reciter = document.getElementById('selectReciter').value;
+            let folder = "Misyari_Rasyid"; 
+            if (reciter === "Mishary Rashid Alafasy") folder = "Misyari_Rasyid";
+            else if (reciter === "Abdul Baset Abdul Samad") folder = "Abdul_Basit";
+            else if (reciter === "Abdur-Rahman as-Sudais") folder = "Abdurrahman_As_Sudais";
+            else if (reciter === "Mahmoud Khalil Al-Husary") folder = "Mahmoud_Khalil_Al_Husary";
+            return 'QuranHadist/data/audio/' + folder + '/' + formatNumber(surahNo) + formatNumber(ayatNo) + '.mp3';
+        }

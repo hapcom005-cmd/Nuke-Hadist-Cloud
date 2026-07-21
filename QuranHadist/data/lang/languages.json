@@ -1,0 +1,590 @@
+[
+  {
+    "code": "ace",
+    "edition": "ace-tgkhmahjiddinju",
+    "name": "Achinese",
+    "author": "Tgk. H. Mahjiddin Jusuf"
+  },
+  {
+    "code": "aar",
+    "edition": "aar-sheikhmahmoudab",
+    "name": "Afar",
+    "author": "Sheikh Mahmoud Abdel Qader Hamz And Group Of Scholars"
+  },
+  {
+    "code": "afr",
+    "edition": "afr-imammabaker",
+    "name": "Afrikaans",
+    "author": "Imam M. A. Baker"
+  },
+  {
+    "code": "sqi",
+    "edition": "sqi-fetimehdiu-la",
+    "name": "Albanian",
+    "author": "Feti Mehdiu"
+  },
+  {
+    "code": "amh",
+    "edition": "amh-muhammedsadiqan-la",
+    "name": "Amharic",
+    "author": "Muhammed Sadiq And Muhammed Sani Habib"
+  },
+  {
+    "code": "ara",
+    "edition": "ara-jalaladdinalmah",
+    "name": "Arabic",
+    "author": "Jalal Ad Din Al Mahalli And Jalal Ad Din As Suyuti"
+  },
+  {
+    "code": "asm",
+    "edition": "asm-shaykhrafeequli-la",
+    "name": "Assamese",
+    "author": "Shaykh Rafeequl Islam Habibur Rahman"
+  },
+  {
+    "code": "aze",
+    "edition": "aze-alikhanmusayev-la",
+    "name": "Azerbaijani",
+    "author": "Alikhan Musayev"
+  },
+  {
+    "code": "bam",
+    "edition": "bam-deenmuhammad",
+    "name": "Bambara",
+    "author": "Deen Muhammad"
+  },
+  {
+    "code": "ben",
+    "edition": "ben-abubakrzakaria-la",
+    "name": "Bengali",
+    "author": "Abu Bakr Zakaria"
+  },
+  {
+    "code": "ber",
+    "edition": "ber-ramdaneatmansou-la",
+    "name": "Berber",
+    "author": "Ramdane At Mansour"
+  },
+  {
+    "code": "bos",
+    "edition": "bos-besimkorkut-la",
+    "name": "Bosnian",
+    "author": "Besim Korkut"
+  },
+  {
+    "code": "bul",
+    "edition": "bul-tzvetantheophan-la",
+    "name": "Bulgarian",
+    "author": "Tzvetan Theophanov"
+  },
+  {
+    "code": "mya",
+    "edition": "mya-alinuyin",
+    "name": "Burmese",
+    "author": "Alin U Yin"
+  },
+  {
+    "code": "cat",
+    "edition": "cat-yousseflyoussi-la",
+    "name": "Catalan",
+    "author": "Youssef Lyoussi"
+  },
+  {
+    "code": "nya",
+    "edition": "nya-alhajiyusufmuha",
+    "name": "Chichewa",
+    "author": "Al Haji Yusuf Muhammad Kanyamula"
+  },
+  {
+    "code": "zho",
+    "edition": "zho-majian-la",
+    "name": "Chinese(simplified)",
+    "author": "Ma Jian"
+  },
+  {
+    "code": "zho",
+    "edition": "zho-anonymousgroupo-la",
+    "name": "Chinese(traditional)",
+    "author": "Anonymous Group Of Translators"
+  },
+  {
+    "code": "hrv",
+    "edition": "hrv-unknown-la",
+    "name": "Croatian",
+    "author": "Unknown"
+  },
+  {
+    "code": "ces",
+    "edition": "ces-arnykl-la",
+    "name": "Czech",
+    "author": "A. R. Nykl"
+  },
+  {
+    "code": "dag",
+    "edition": "dag-muhammadbabaght",
+    "name": "Dagbani",
+    "author": "Muhammad Baba Ghtobo"
+  },
+  {
+    "code": "dan",
+    "edition": "dan-hadiabdollahian",
+    "name": "Danish",
+    "author": "Hadi Abdollahian"
+  },
+  {
+    "code": "prs",
+    "edition": "prs-mawlawimuhammad",
+    "name": "Dari",
+    "author": "Mawlawi Muhammad Anwar Badkhashani"
+  },
+  {
+    "code": "div",
+    "edition": "div-officeofthepres",
+    "name": "Divehi",
+    "author": "Office Of The President Of Maldives"
+  },
+  {
+    "code": "nld",
+    "edition": "nld-fredleemhuis",
+    "name": "Dutch",
+    "author": "Fred Leemhuis"
+  },
+  {
+    "code": "eng",
+    "edition": "eng-abdelhaleem",
+    "name": "English",
+    "author": "Abdel Haleem"
+  },
+  {
+    "code": "epo",
+    "edition": "epo-hadiabdollahian",
+    "name": "Esperanto",
+    "author": "Hadi Abdollahian"
+  },
+  {
+    "code": "fil",
+    "edition": "fil-abdullatifeduar",
+    "name": "Filipino",
+    "author": "Abdullatif Eduardo M. Arceo"
+  },
+  {
+    "code": "fin",
+    "edition": "fin-unknown-la",
+    "name": "Finnish",
+    "author": "Unknown"
+  },
+  {
+    "code": "fra",
+    "edition": "fra-islamicfoundati-la",
+    "name": "French",
+    "author": "Islamic Foundation"
+  },
+  {
+    "code": "ful",
+    "edition": "ful-rowadtranslatio",
+    "name": "Fulah",
+    "author": "Rowad Translation Center And Islamhouse"
+  },
+  {
+    "code": "lug",
+    "edition": "lug-fareeqmusa",
+    "name": "Ganda",
+    "author": "Fareeq Musa"
+  },
+  {
+    "code": "deu",
+    "edition": "deu-aburidamuhammad-la",
+    "name": "German",
+    "author": "Abu Rida Muhammad Ibn Ahmad Ibn Rassoul"
+  },
+  {
+    "code": "guj",
+    "edition": "guj-rabilaalomari-la",
+    "name": "Gujarati",
+    "author": "Rabila Al Omari"
+  },
+  {
+    "code": "hau",
+    "edition": "hau-abubakarmahmood-la",
+    "name": "Hausa",
+    "author": "Abubakar Mahmood Jummi"
+  },
+  {
+    "code": "heb",
+    "edition": "heb-darusalamhousei",
+    "name": "Hebrew",
+    "author": "Darusalam House In Jerusalem"
+  },
+  {
+    "code": "hin",
+    "edition": "hin-maulanaazizulha-la",
+    "name": "Hindi",
+    "author": "Maulana Azizul Haque Al Umari"
+  },
+  {
+    "code": "hun",
+    "edition": "hun-drahmedabdelrah-la",
+    "name": "Hungarian",
+    "author": "Dr. Ahmed Abdel Rahman Okfat Tashaab"
+  },
+  {
+    "code": "ind",
+    "edition": "ind-indonesianislam",
+    "name": "Indonesian",
+    "author": "Indonesian Islamic Affairs Ministry"
+  },
+  {
+    "code": "ilp",
+    "edition": "ilp-abdulazizgroaal",
+    "name": "Iranun",
+    "author": "Abdul Aziz Gro Aalem Saromintang"
+  },
+  {
+    "code": "ita",
+    "edition": "ita-hamzarobertopic-la",
+    "name": "Italian",
+    "author": "Hamza Roberto Piccardo"
+  },
+  {
+    "code": "jpn",
+    "edition": "jpn-ryoichimita-la",
+    "name": "Japanese",
+    "author": "Ryoichi Mita"
+  },
+  {
+    "code": "jav",
+    "edition": "jav-unknown-la",
+    "name": "Javanese",
+    "author": "Unknown"
+  },
+  {
+    "code": "kan",
+    "edition": "kan-abdussalamputhi-la",
+    "name": "Kannada",
+    "author": "Abdussalam Puthige"
+  },
+  {
+    "code": "kaz",
+    "edition": "kaz-khalifahaltai-la",
+    "name": "Kazakh",
+    "author": "Khalifah Altai"
+  },
+  {
+    "code": "knx",
+    "edition": "knx-unknown",
+    "name": "Kendayan",
+    "author": "Unknown"
+  },
+  {
+    "code": "khm",
+    "edition": "khm-cambodianmuslim-la",
+    "name": "Khmer",
+    "author": "Cambodian Muslim Community Development"
+  },
+  {
+    "code": "kin",
+    "edition": "kin-rmcrwanda",
+    "name": "Kinyarwanda",
+    "author": "R. M. C. Rwanda"
+  },
+  {
+    "code": "kir",
+    "edition": "kir-shamsaldinhakim-la",
+    "name": "Kirghiz",
+    "author": "Shams Al Din Hakimov"
+  },
+  {
+    "code": "kor",
+    "edition": "kor-hamidchoi-la",
+    "name": "Korean",
+    "author": "Hamid Choi"
+  },
+  {
+    "code": "kur",
+    "edition": "kur-burhanmuhammada",
+    "name": "Kurdish",
+    "author": "Burhan Muhammad Amin"
+  },
+  {
+    "code": "kmr",
+    "edition": "kmr-unknown-la",
+    "name": "Kurmanji",
+    "author": "Unknown"
+  },
+  {
+    "code": "lat",
+    "edition": "lat-hadiabdollahian",
+    "name": "Latin",
+    "author": "Hadi Abdollahian"
+  },
+  {
+    "code": "lin",
+    "edition": "lin-zakariyamuhamme",
+    "name": "Lingala",
+    "author": "Zakariya Muhammed Balingongo"
+  },
+  {
+    "code": "luy",
+    "edition": "luy-mohammadramadha",
+    "name": "Luyia",
+    "author": "Mohammad Ramadhan Sebwa, Ramadhan Hajj Ndeka, Ismail Were, Musa Murasi Salim Kukuya, Yusuf Shiundu Malala, Yahya Wafula Ojwang, Haroon Albert Msah"
+  },
+  {
+    "code": "mkd",
+    "edition": "mkd-macedonianschol",
+    "name": "Macedonian",
+    "author": "Macedonian Scholars"
+  },
+  {
+    "code": "msa",
+    "edition": "msa-abdullahmuhamma",
+    "name": "Malay",
+    "author": "Abdullah Muhammad Basmeih"
+  },
+  {
+    "code": "mal",
+    "edition": "mal-abdulhameedmada-la",
+    "name": "Malayalam",
+    "author": "Abdul Hameed Madani And Kunhi Mohammed"
+  },
+  {
+    "code": "mlt",
+    "edition": "mlt-martinrzammitmu-la",
+    "name": "Maltese",
+    "author": "Martin R. Zammit, Muhammad El Sadi"
+  },
+  {
+    "code": "mrw",
+    "edition": "mrw-guroalimsaroman",
+    "name": "Maranao",
+    "author": "Guro Alim Saromantang"
+  },
+  {
+    "code": "mar",
+    "edition": "mar-muhammadshafiia-la",
+    "name": "Marathi",
+    "author": "Muhammad Shafi I Ansari"
+  },
+  {
+    "code": "nep",
+    "edition": "nep-ahlalhadithcent-la",
+    "name": "Nepali",
+    "author": "Ahl Al Hadith Central Society Of Nepal"
+  },
+  {
+    "code": "nor",
+    "edition": "nor-einarberg-la",
+    "name": "Norwegian",
+    "author": "Einar Berg"
+  },
+  {
+    "code": "orm",
+    "edition": "orm-ghaliapapurapag",
+    "name": "Oromo",
+    "author": "Ghali Apapur Apaghuna"
+  },
+  {
+    "code": "pan",
+    "edition": "pan-drmuhamadhabibb-la",
+    "name": "Panjabi",
+    "author": "Dr. Muhamad Habib, Bhai Harpreet Singh, Maulana Wahiduddin Khan"
+  },
+  {
+    "code": "fas",
+    "edition": "fas-abdolmohammaday",
+    "name": "Persian",
+    "author": "Abdolmohammad Ayati"
+  },
+  {
+    "code": "pol",
+    "edition": "pol-jozefabielawski-la",
+    "name": "Polish",
+    "author": "Jozefa Bielawskiego"
+  },
+  {
+    "code": "por",
+    "edition": "por-helminasr-la",
+    "name": "Portuguese",
+    "author": "Helmi Nasr"
+  },
+  {
+    "code": "pus",
+    "edition": "pus-abdulwalikhan",
+    "name": "Pushto",
+    "author": "Abdulwali Khan"
+  },
+  {
+    "code": "ron",
+    "edition": "ron-georgegrigore-la",
+    "name": "Romanian",
+    "author": "George Grigore"
+  },
+  {
+    "code": "run",
+    "edition": "run-sheikhamissirad",
+    "name": "Rundi",
+    "author": "Sheikh Amissi Radjabu Ntamba"
+  },
+  {
+    "code": "rus",
+    "edition": "rus-abuadel-la",
+    "name": "Russian",
+    "author": "Abu Adel"
+  },
+  {
+    "code": "srp",
+    "edition": "srp-rowwadtranslati",
+    "name": "Serbian",
+    "author": "Rowwad Translation Center Islamhouse"
+  },
+  {
+    "code": "sna",
+    "edition": "sna-abdullahjmadini",
+    "name": "Shona",
+    "author": "Abdullah J. M. Adini And Students"
+  },
+  {
+    "code": "snd",
+    "edition": "snd-tajmehmoodamrot",
+    "name": "Sindhi",
+    "author": "Taj Mehmood Amroti"
+  },
+  {
+    "code": "sin",
+    "edition": "sin-naseemismailand-la",
+    "name": "Sinhala",
+    "author": "Naseem Ismail And Masoor Maulana, Kaleel"
+  },
+  {
+    "code": "slk",
+    "edition": "slk-hadiabdollahian",
+    "name": "Slovak",
+    "author": "Hadi Abdollahian"
+  },
+  {
+    "code": "som",
+    "edition": "som-abdullahhasanja",
+    "name": "Somali",
+    "author": "Abdullah Hasan Jacob"
+  },
+  {
+    "code": "sot",
+    "edition": "sot-sheikheliaskeke",
+    "name": "Sotho",
+    "author": "Sheikh Elias Keketso Lelia"
+  },
+  {
+    "code": "spa",
+    "edition": "spa-abdulqadermouhe-la",
+    "name": "Spanish",
+    "author": "Abdul Qader Mouheddine, Sirhan Ali Sanchez."
+  },
+  {
+    "code": "swa",
+    "edition": "swa-abdullahmuhamma",
+    "name": "Swahili",
+    "author": "Abdullah Muhammad Abu Bakr"
+  },
+  {
+    "code": "swe",
+    "edition": "swe-knutbernstrom-la",
+    "name": "Swedish",
+    "author": "Knut Bernstrom"
+  },
+  {
+    "code": "tgk",
+    "edition": "tgk-abdolmohammaday-la",
+    "name": "Tajik",
+    "author": "Abdolmohammad Ayati"
+  },
+  {
+    "code": "tam",
+    "edition": "tam-abdulhameedbaqa-la",
+    "name": "Tamil",
+    "author": "Abdulhameed Baqavi"
+  },
+  {
+    "code": "tat",
+    "edition": "tat-yakubibnnugman",
+    "name": "Tatar",
+    "author": "Yakub Ibn Nugman"
+  },
+  {
+    "code": "tel",
+    "edition": "tel-abdulraheemmoha-la",
+    "name": "Telugu",
+    "author": "Abdul Raheem Mohammad Moulana"
+  },
+  {
+    "code": "tha",
+    "edition": "tha-groupfromthesoc-la",
+    "name": "Thai",
+    "author": "Group From The Society Of Graduates Of Thai Universities And Institutes"
+  },
+  {
+    "code": "tur",
+    "edition": "tur-abdulbakigolpin-la",
+    "name": "Turkish",
+    "author": "Abdulbaki Golpinarli"
+  },
+  {
+    "code": "twi",
+    "edition": "twi-sheikhharounism",
+    "name": "Twi",
+    "author": "Sheikh Haroun Ismaeel"
+  },
+  {
+    "code": "uig",
+    "edition": "uig-muhammadsaleh",
+    "name": "Uighur",
+    "author": "Muhammad Saleh"
+  },
+  {
+    "code": "ukr",
+    "edition": "ukr-drmikhailoyaqub",
+    "name": "Ukrainian",
+    "author": "Dr. Mikhailo Yaqubovic"
+  },
+  {
+    "code": "urd",
+    "edition": "urd-abulaalamaududi-la",
+    "name": "Urdu",
+    "author": "Abul Ala Maududi"
+  },
+  {
+    "code": "uzb",
+    "edition": "uzb-alaaudeenmansou",
+    "name": "Uzbek",
+    "author": "Alaaudeen Mansour"
+  },
+  {
+    "code": "vie",
+    "edition": "vie-hassanabdulkari-la",
+    "name": "Vietnamese",
+    "author": "Hassan Abdulkarim"
+  },
+  {
+    "code": "xho",
+    "edition": "xho-imaamismaaeelng",
+    "name": "Xhosa",
+    "author": "Imaam Ismaaeel Ngqoyiyana"
+  },
+  {
+    "code": "yuw",
+    "edition": "yuw-muhammadbinabdu-la",
+    "name": "Yau",
+    "author": "Muhammad Bin Abdul Hamid Silika"
+  },
+  {
+    "code": "yor",
+    "edition": "yor-shaykhaburahima-la",
+    "name": "Yoruba",
+    "author": "Shaykh Abu Rahimah Mikael Aykyuni"
+  },
+  {
+    "code": "zul",
+    "edition": "zul-iqembulezifundi",
+    "name": "Zulu",
+    "author": "Iqembu Lezifundiswa, Mussa Muhammad Telela , Uthman Mfanafuthi Msomi, Moulana Abdur Rahman Chilipa, Haji Ibrahim Mondli Japhet Mthembu, Moulana Imran Ngcobo, Moulana Eshaaq Osman"
+  }
+]

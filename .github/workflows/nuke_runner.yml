@@ -1,0 +1,35 @@
+name: 💥 OMNI-SOURCE CLOUD NUKE 💥
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install axios || true
+
+      - name: Run Cloud Nuke Engine
+        run: node cloud_nuke.js
+
+      - name: Auto-Commit and Push Data
+        run: |
+          git config --global user.name "Nova (Antigravity AI)"
+          git config --global user.email "nova-ai@github.com"
+          git add QuranHadist/data/hadist_lang/*
+          git commit -m "🤖 Auto-Translate Data Updated by Nova" || echo "No changes to commit"
+          git push

@@ -1,0 +1,16 @@
+node_modules/
+.git/
+QuranHadist/data/temp_index/
+QuranHadist/data/temp_index_v2/
+QuranHadist/data/offline_index/
+offline_index/
+temp_index/
+temp_index_v2/
+*.json.old
+*.log
+*.bat
+*.py
+Backup_Level3/
+tafsir_global.zip
+tafsir_global/
+/QuranHadist/data/audio/

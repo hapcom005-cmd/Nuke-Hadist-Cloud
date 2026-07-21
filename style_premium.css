@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* FONT FACE UNTUK MUSHAF RESMI */
+@font-face {
+    font-family: 'KFGQPC Uthmanic Script';
+    src: local('KFGQPC Uthmanic Script HAFS');
+}
+@font-face {
+    font-family: 'LPMQ IsepMisbah';
+    src: local('LPMQ IsepMisbah');
+}
+
+:root {
+    --bg-dark: #0b111a;
+    --bg-glow: radial-gradient(circle at 40% 50%, #172439 0%, #0a0f18 60%, #05080c 100%);
+    --glass-bg: rgba(22, 30, 46, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    
+    --cyan: #38bdf8;
+    --cyan-dim: rgba(56, 189, 248, 0.15);
+    --gold: #fde047;
+    --gold-dim: #ca8a04;
+    
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    
+    --font-ui: 'Inter', sans-serif;
+    --font-ar: 'KFGQPC Uthmanic Script', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg-glow);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==============================================================
+   4-COLUMN GRID ARCHITECTURE (CLEAN)
+   ============================================================== */
+.dashboard-container {
+    width: 100%; height: 100%; max-width: 1800px;
+    display: grid;
+    grid-template-columns: 80px 320px 1fr 400px;
+    grid-template-rows: 70px 1fr;
+    gap: 20px;
+    padding: 20px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* BOOK-STYLE MODE (Zen Mode) */
+.dashboard-container.book-mode {
+    grid-template-columns: 0px 0px 1fr 0px;
+    gap: 0;
+}
+.dashboard-container.book-mode .col-nav,
+.dashboard-container.book-mode .col-list,
+.dashboard-container.book-mode .col-info {
+    opacity: 0; pointer-events: none; transform: scale(0.95);
+    overflow: hidden; padding: 0; margin: 0; border: none;
+}
+.dashboard-container.book-mode .col-main {
+    padding: 0 40px;
+}
+
+/* ==============================================================
+   TOP BANNER (Row 1, Span All Columns)
+   ============================================================== */
+.top-banner {
+    grid-column: 1 / -1;
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 10px; border-bottom: 1px solid var(--glass-border);
+}
+.brand-left { display: flex; align-items: center; gap: 15px; }
+.brand-quran { font-size: 1.8rem; font-weight: 800; color: var(--gold); letter-spacing: 1px; }
+.brand-badge { background: var(--gold); color: #000; font-size: 0.75rem; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
+
+.advanced-search { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: center; }
+.search-input-box {
+    width: 100%; max-width: 400px; background: rgba(10, 15, 25, 0.8);
+    border: 1px solid var(--glass-border); border-radius: 10px; padding: 12px 20px;
+}
+.search-input-box input {
+    width: 100%; background: transparent; border: none; outline: none;
+    color: #fff; font-family: var(--font-ui); font-size: 0.9rem;
+}
+.search-input-box input::placeholder { color: #64748b; }
+
+.btn-primary { background: var(--gold); color: #000; font-weight: 700; border: none; padding: 12px 20px; border-radius: 10px; cursor: pointer; font-size: 0.9rem; box-shadow: 0 0 15px rgba(253, 224, 71, 0.3); transition: 0.3s; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(253, 224, 71, 0.5); }
+
+.btn-outline { background: transparent; color: var(--cyan); font-weight: 600; border: 1px solid var(--cyan); padding: 12px 20px; border-radius: 10px; cursor: pointer; font-size: 0.9rem; transition: 0.3s; }
+.btn-outline:hover { background: var(--cyan-dim); }
+
+.btn-book { background: rgba(255,255,255,0.05); color: #fff; font-weight: 600; border: 1px solid var(--glass-border); padding: 12px 20px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; transition: 0.3s; }
+.btn-book:hover { background: rgba(255,255,255,0.1); border-color: var(--cyan); color: var(--cyan); }
+.btn-book svg { width: 18px; height: 18px; }
+.btn-book.active { background: var(--cyan); color: #000; border-color: var(--cyan); box-shadow: 0 0 15px var(--cyan); }
+
+.dedication-box { display: flex; align-items: center; gap: 15px; background: rgba(10, 15, 25, 0.8); border: 1px solid rgba(255,255,255,0.05); border-left: 4px solid var(--gold); border-radius: 8px; padding: 10px 20px; }
+.ded-label { color: var(--gold); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; }
+.ded-divider { width: 1px; height: 30px; background: rgba(255,255,255,0.1); }
+.ded-names strong { font-size: 0.9rem; color: #fff; display: block; }
+.ded-names span { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ==============================================================
+   SHARED GLASS PANEL
+   ============================================================== */
+.glass-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    display: flex; flex-direction: column;
+    overflow: hidden; transition: all 0.4s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+/* ==============================================================
+   COLUMN 1: NAV
+   ============================================================== */
+.col-nav { padding: 25px 0; align-items: center; background: rgba(10, 15, 25, 0.6); }
+.gold-logo-circle { width: 45px; height: 45px; border-radius: 50%; background: radial-gradient(circle, rgba(202, 138, 4, 0.2) 0%, transparent 70%); border: 1px solid var(--gold-dim); display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 40px; }
+.gold-logo-circle svg { width: 24px; height: 24px; }
+.nav-menu { display: flex; flex-direction: column; gap: 20px; width: 100%; flex: 1; }
+.nav-item { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--text-muted); text-decoration: none; position: relative; padding: 10px 0; cursor: pointer; transition: 0.3s; }
+.nav-item:hover, .nav-item.active { color: var(--cyan); }
+.nav-item.active::before { content: ''; position: absolute; left: 0; top: 10%; height: 80%; width: 3px; background: var(--cyan); box-shadow: 0 0 10px var(--cyan); border-radius: 0 4px 4px 0; }
+.nav-icon { width: 22px; height: 22px; }
+.nav-text { font-size: 0.65rem; font-weight: 500; }
+
+/* ==============================================================
+   COLUMN 2: SURAH LIST
+   ============================================================== */
+.panel-header { padding: 15px 20px; border-bottom: 1px solid var(--glass-border); }
+.panel-header h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; color: #fff; }
+.table-cols { display: flex; font-size: 0.75rem; color: var(--text-muted); }
+.col-num { width: 35px; } .col-ar { flex: 1; } .col-en { width: 60px; text-align: right; }
+
+.surah-scroll { flex: 1; overflow-y: auto; padding: 10px 15px; }
+.s-item { display: flex; padding: 12px 15px; border-radius: 8px; margin-bottom: 5px; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
+.s-item:hover { background: rgba(255,255,255,0.05); }
+.s-item.active { background: var(--cyan-dim); border-color: var(--cyan); color: #fff; box-shadow: inset 0 0 15px rgba(56, 189, 248, 0.1); }
+
+.lang-panel { padding: 15px 20px; border-top: 1px solid var(--glass-border); }
+.lang-header { font-size: 0.95rem; font-weight: 600; color: var(--gold); margin-bottom: 12px; }
+.lang-active { display: flex; align-items: center; justify-content: space-between; padding: 12px 15px; background: rgba(0,0,0,0.4); border: 1px solid var(--glass-border); border-radius: 8px; color: #fff; font-size: 0.85rem; cursor: pointer; }
+.lang-active:hover { border-color: var(--cyan); }
+
+/* ==============================================================
+   COLUMN 3: MAIN READING AREA
+   ============================================================== */
+.col-main { background: transparent; border: none; box-shadow: none; backdrop-filter: none; }
+.reading-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px 20px; border-bottom: 1px solid var(--glass-border); }
+.surah-title h2 { font-size: 1.4rem; font-weight: 700; color: #fff; }
+.surah-title p { font-size: 0.85rem; color: var(--text-muted); margin-top: 2px; }
+.header-actions { display: flex; align-items: center; gap: 15px; }
+.play-circle { width: 40px; height: 40px; border-radius: 50%; background: transparent; border: 2px solid var(--cyan); color: var(--cyan); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 15px var(--cyan-dim), inset 0 0 10px var(--cyan-dim); transition: 0.3s; }
+.play-circle:hover { background: var(--cyan-dim); }
+.play-circle svg { width: 18px; height: 18px; fill: currentColor; }
+
+.reading-body { flex: 1; overflow-y: auto; padding: 30px 40px; }
+.verse-group { margin-bottom: 50px; }
+.arabic-row { display: flex; align-items: flex-start; gap: 25px; margin-bottom: 15px; flex-direction: row-reverse; }
+.cyan-ring { width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--cyan); color: var(--cyan); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 600; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 0 15px rgba(56, 189, 248, 0.4); text-shadow: 0 0 10px var(--cyan); flex-shrink: 0; margin-top: 10px; }
+
+/* Word-by-Word */
+.wbw-container { display: flex; flex-wrap: wrap; flex-direction: row-reverse; gap: 12px; }
+.wbw-word { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; padding: 12px 15px; border-radius: 10px; transition: 0.3s; border: 1px solid transparent; }
+.wbw-word:hover { background: var(--cyan-dim); border-color: var(--cyan); box-shadow: 0 5px 15px rgba(56, 189, 248, 0.15); transform: translateY(-3px); }
+.wbw-arab { font-family: var(--font-ar); font-size: 2.2rem; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.2); line-height: 1.5; }
+.wbw-trans { font-size: 0.85rem; color: var(--gold); font-weight: 500; text-align: center; }
+
+/* Tajweed Colors */
+.t-ikhfa { color: #22c55e !important; text-shadow: 0 0 10px rgba(34, 197, 94, 0.5); }
+.t-idgham { color: #ec4899 !important; text-shadow: 0 0 10px rgba(236, 72, 153, 0.5); }
+.t-qalqalah { color: #0ea5e9 !important; text-shadow: 0 0 10px rgba(14, 165, 233, 0.5); }
+.t-mad { color: #f97316 !important; text-shadow: 0 0 10px rgba(249, 115, 22, 0.5); }
+
+.translation { font-size: 1rem; color: #e2e8f0; line-height: 1.7; padding-right: 65px; border-top: 1px solid var(--glass-border); padding-top: 15px; margin-top: 15px; }
+.ref-link { color: var(--cyan); text-decoration: none; font-weight: 600; cursor: pointer; }
+
+/* ==============================================================
+   COLUMN 4: INFO (TAFSIR & HADITH)
+   ============================================================== */
+.col-info { display: flex; flex-direction: column; gap: 20px; background: transparent; border: none; box-shadow: none; backdrop-filter: none; }
+.info-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; overflow: hidden; }
+.tafsir-card { flex: 0.6; position: relative; }
+.tafsir-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(180deg, rgba(202, 138, 4, 0.15) 0%, transparent 100%); pointer-events: none; }
+.info-header { margin-bottom: 15px; z-index: 2; position: relative; }
+.info-header h3 { font-size: 1.1rem; color: var(--gold); font-weight: 600; }
+.info-header p { font-size: 0.8rem; color: var(--text-muted); }
+.info-body { flex: 1; overflow-y: auto; font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; z-index: 2; position: relative; }
+
+.hadith-card { flex: 0.4; background: linear-gradient(180deg, rgba(56, 189, 248, 0.1) 0%, var(--glass-bg) 100%); border-color: rgba(56, 189, 248, 0.3); box-shadow: 0 0 25px rgba(56, 189, 248, 0.05); }
+.hadith-card .info-header h3 { color: var(--cyan); }
+.hadith-text { font-style: italic; color: #fff; font-size: 0.95rem; }

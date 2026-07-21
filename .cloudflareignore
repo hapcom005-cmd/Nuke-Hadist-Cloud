@@ -1,0 +1,7 @@
+node_modules/
+tafsir_global.zip
+tafsir_global/
+*.log
+*.png
+Backup_Level3/
+*.bat
