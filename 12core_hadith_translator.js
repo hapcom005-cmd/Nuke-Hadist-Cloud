@@ -2,7 +2,7 @@ const { Worker } = require('worker_threads');
 const fs = require('fs');
 const path = require('path');
 
-const NUM_CORES = 12;
+const NUM_CORES = process.env.NUM_CORES || 12;
 const IMAM = process.argv[2] || 'bukhari';
 const TARGET_LANG = process.argv[3] || 'en'; // e.g. en, ru, ms
 const INPUT_FILE = path.join(__dirname, `QuranHadist/data/hadist_js/${IMAM}.js`);

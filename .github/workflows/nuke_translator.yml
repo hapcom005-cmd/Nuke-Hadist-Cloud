@@ -1,0 +1,70 @@
+name: 🚀 NUKE TRANSLATOR (20-CORE MASS DEPLOYMENT) 🚀
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    name: "Translate to ${{ matrix.lang }}"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        lang: [af, sq, am, ar, hy, az, eu, be, bn, bs, bg, ca, ceb, zh-CN, zh-TW, co, hr, cs, da, nl, eo, et, fi, fr, fy, gl, ka, de, el, gu, ht, ha, haw, he, hi, hmn, hu, is, ig, ga, it, ja, jv, kn, kk, km, rw, ko, ku, ky, lo, la, lv, lt, lb, mk, mg, ms, ml, mt, mi, mr, mn, my, ne, no, ny, or, ps, fa, pl, pt, pa, ro, ru, sr, es, sv, th]
+      fail-fast: false
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: 💥 Execute 12-Core Engine
+        env:
+          NUM_CORES: 24
+        run: node 12core_hadith_translator.js bukhari ${{ matrix.lang }}
+        
+      - name: 📦 Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hadist-bukhari-${{ matrix.lang }}
+          path: QuranHadist/data/hadist_lang/${{ matrix.lang }}/bukhari.json
+          retention-days: 1
+
+  gather_and_commit:
+    name: "Gather Artifacts & Push to Repo"
+    needs: translate
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📥 Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: downloaded_artifacts
+
+      - name: 🛠️ Move Artifacts to Target Directories
+        run: |
+          mkdir -p QuranHadist/data/hadist_lang
+          cd downloaded_artifacts
+          for dir in hadist-bukhari-*; do
+            lang=${dir#hadist-bukhari-}
+            mkdir -p ../QuranHadist/data/hadist_lang/$lang
+            mv $dir/bukhari.json ../QuranHadist/data/hadist_lang/$lang/
+          done
+
+      - name: 🚀 Commit & Push to GitHub
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add QuranHadist/data/hadist_lang/
+          git commit -m "🚀 AUTO-NUKE: Mass Translation of 20 Languages by GitHub Actions" || echo "No changes to commit"
+          git push origin HEAD
