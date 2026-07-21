@@ -681,9 +681,9 @@
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5L12 2zm0 4.5l1 3.5 3.5 1-3.5 1-1 3.5-1-3.5-3.5-1 3.5-1 1-3.5zM6 6L4.5 9.5 3 6 0 4.5 3 3l1.5-3L6 3l3 1.5L6 6z"/></svg>
                 <span style="font-weight:600; letter-spacing:0.5px; margin-top:4px;">Hadist</span>
             </div>
-            <div class="nav-icon" onclick="alert('Fitur Tafsir sedang dibangun dengan kemewahan yang sama!')">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
-                <span style="font-weight:600; letter-spacing:0.5px; margin-top:4px;">Tafsir</span>
+            <div class="nav-icon" onclick="alert('Ini adalah tombol rahasia menuju Kolom Komentar Super User!')">
+                <i class="fa fa-comment-dots"></i>
+                <span style="font-weight:600; letter-spacing:0.5px; margin-top:4px;">Komentar</span>
             </div>
             <div class="nav-icon" onclick="alert('Pengaturan Premium segera hadir!')">
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.73 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.49-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
@@ -915,14 +915,48 @@
         <!-- RIGHT PANELS -->
         <div class="right-panels" id="quranRightPanels">
             <div class="panel-box">
-                <div class="panel-title" id="tafsirPanelTitle">Tafsir Kemenag RI</div>
-                <div class="panel-sub" id="tafsirPanelSub">Klik ayat untuk melihat tafsir</div>
-                <div style="padding:8px 15px; border-bottom:1px solid var(--border-color);">
-                    <button class="btn-open-all-tafsir" onclick="openTafsirModal()" id="btnOpenAllTafsir" disabled>📖 Buka 122 Tafsir Dunia</button>
+                <div class="panel-title" id="komentarPanelTitle">💬 Kolom Komentar</div>
+                <div class="panel-sub" id="komentarPanelSub">Area Khusus Super User</div>
+                <div style="padding:15px; border-bottom:1px solid var(--border-color);" id="loginKomentarBox">
+                    <input type="text" id="suUsername" placeholder="Username" style="width:100%; margin-bottom:10px; padding:8px; background:rgba(255,255,255,0.05); border:1px solid var(--border-color); color:#fff; border-radius:6px;">
+                    <input type="password" id="suPassword" placeholder="Password" style="width:100%; margin-bottom:10px; padding:8px; background:rgba(255,255,255,0.05); border:1px solid var(--border-color); color:#fff; border-radius:6px;">
+                    <button class="btn-open-all-tafsir" onclick="loginSuperUser()">🔑 Login Super User</button>
+                    <p id="suLoginMsg" style="color:#f44336; font-size:12px; margin-top:5px; display:none;"></p>
                 </div>
-                <div class="panel-content" id="tafsirContent">
-                    <span style="font-style:italic; color:var(--text-muted);">Klik ayat untuk melihat tafsir.</span>
+                <div class="panel-content" id="komentarContent" style="display:none; padding-top:10px;">
+                    <textarea id="suCommentText" placeholder="Ketik komentar rahasia Jenderal di sini..." style="width:100%; height:80px; padding:8px; background:rgba(255,255,255,0.05); border:1px solid var(--border-color); color:#fff; border-radius:6px; margin-bottom:10px;"></textarea>
+                    <button class="btn-open-all-tafsir" onclick="kirimKomentarGaib()">Kirim Komentar</button>
+                    <div style="margin-top:15px; border-top:1px dashed var(--border-color); padding-top:10px; font-size:12px;" id="listKomentar">
+                        <span style="font-style:italic; color:var(--text-muted);">Belum ada komentar.</span>
+                    </div>
                 </div>
+                <script>
+                    function loginSuperUser() {
+                        const u = document.getElementById('suUsername').value;
+                        const p = document.getElementById('suPassword').value;
+                        const msg = document.getElementById('suLoginMsg');
+                        if(u === 'irwan21' && p === 'R@hasia123') {
+                            document.getElementById('loginKomentarBox').style.display = 'none';
+                            document.getElementById('komentarContent').style.display = 'block';
+                            msg.style.display = 'none';
+                            alert('BWAHAHAHA! Selamat Datang Jenderal Irwan21! Akses VVIP Terbuka!');
+                        } else {
+                            msg.innerText = 'BIP BOP! Akses Ditolak! Anda bukan Sang Jenderal!';
+                            msg.style.display = 'block';
+                        }
+                    }
+                    function kirimKomentarGaib() {
+                        const txt = document.getElementById('suCommentText');
+                        if(!txt.value) return;
+                        const list = document.getElementById('listKomentar');
+                        if(list.innerHTML.includes('Belum ada komentar')) list.innerHTML = '';
+                        list.innerHTML = `<div style="background:rgba(245,208,97,0.1); padding:8px; border-radius:6px; margin-bottom:8px; border-left:3px solid var(--accent-gold);">
+                            <strong style="color:var(--accent-gold);">Super User Irwan21</strong><br>
+                            ${txt.value}
+                        </div>` + list.innerHTML;
+                        txt.value = '';
+                    }
+                </script>
             </div>
             <div class="panel-box">
                 <div class="panel-hadith-title">Supporting Hadith</div>
