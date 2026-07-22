@@ -2,6 +2,9 @@ name: 🚀 NUKE TRANSLATOR (80-CORE MASS DEPLOYMENT) 🚀
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/nuke_translator.yml'
 
 permissions:
   contents: write
