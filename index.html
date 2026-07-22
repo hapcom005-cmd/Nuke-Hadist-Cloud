@@ -1060,7 +1060,7 @@
                 const s = document.createElement('script');
                 s.src = src;
                 s.onload = resolve;
-                s.onerror = reject;
+                s.onerror = () => reject(new Error("File script tidak ditemukan atau gagal diunduh: " + src));
                 document.head.appendChild(s);
             });
         }
@@ -1588,7 +1588,7 @@
                 renderHadithPage(1);
                 
             } catch(e) {
-                DOM.ayatContainer.innerHTML = '<div style="color:red; padding:20px;">Gagal memuat Kitab Hadist.</div>';
+                DOM.ayatContainer.innerHTML = '<div style="color:red; padding:20px;">Gagal memuat Kitab Hadist. Detail Error: ' + e.message + '</div>';
             }
         }
 
@@ -2127,24 +2127,27 @@
         function getAudioUrl(surahNo, ayatNo) {
             const reciter = document.getElementById('selectReciter').value;
             
-            // FITUR FALLBACK OFFLINE DATABASE (SUDAIS)
-            if (reciter === "offline_sudais") {
-                return 'QuranHadist/data/audio/sudais/ayat/' + formatNumber(surahNo) + formatNumber(ayatNo) + '.mp3';
+            // FITUR FALLBACK OFFLINE DATABASE (SEMUA OFFLINE RECITER)
+            // Format di dropdown: offline_mishary, offline_abdulbaset, dst.
+            if (reciter.startsWith("offline_")) {
+                let rFolder = "sudais"; // default
+                if (reciter === "offline_mishary") rFolder = "mishary";
+                else if (reciter === "offline_abdulbaset") rFolder = "abdulbaset";
+                else if (reciter === "offline_shuraim") rFolder = "shuraim";
+                else if (reciter === "offline_husary") rFolder = "husary";
+                else if (reciter === "offline_sudais") rFolder = "sudais";
+                
+                return 'QuranHadist/data/audio/' + rFolder + '/ayat/' + formatNumber(surahNo) + formatNumber(ayatNo) + '.mp3';
             }
 
             let folder = "Alafasy_128kbps"; // Default
             
-            // Mapping Offline Murottal (Lokal) -> CDN Everyayah
-            if (reciter === "offline_mishary") folder = "Alafasy_128kbps";
-            else if (reciter === "offline_abdulbaset") folder = "Abdul_Basit_Mujawwad_128kbps";
-            else if (reciter === "offline_shuraim") folder = "Saood_ash-Shuraym_128kbps";
-            else if (reciter === "offline_husary") folder = "Husary_128kbps";
-            
-            // Mapping Online API (Cloud) -> CDN Everyayah
-            else if (reciter === "ar.hudhaify") folder = "Hudhaify_128kbps";
+            // Mapping Online API (Cloud) -> CDN Everyayah atau mp3quran
+            if (reciter === "ar.hudhaify") folder = "Hudhaify_128kbps";
             else if (reciter === "ar.abdullahbasfar") folder = "Abdullah_Basfar_192kbps";
             
-            // Menggunakan CDN Internasional Everyayah untuk Audio Online tanpa beban storage lokal
+            // Bypass Indihome DPI block pada Everyayah dengan menggunakan Proxy AllOrigins / Server alternatif
+            // Untuk sementara kita gunakan server alternatif (jika bisa) atau tetap everyayah karena ini pilihan online
             return 'https://everyayah.com/data/' + folder + '/' + formatNumber(surahNo) + formatNumber(ayatNo) + '.mp3';
         }
         
