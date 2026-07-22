@@ -1,4 +1,4 @@
-name: 🚀 NUKE TRANSLATOR (20-CORE MASS DEPLOYMENT) 🚀
+name: 🚀 NUKE TRANSLATOR (80-CORE MASS DEPLOYMENT) 🚀
 
 on:
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
           
       - name: 💥 Execute 12-Core Engine
         env:
-          NUM_CORES: 24
+          NUM_CORES: 80
         run: node 12core_hadith_translator.js bukhari ${{ matrix.lang }}
         
       - name: 📦 Upload Artifact
