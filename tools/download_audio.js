@@ -4,7 +4,10 @@ const path = require('path');
 
 const RECITER_CONFIG = [
     { name: 'mishary', remoteFolder: 'Alafasy_128kbps' },
-    // Only doing Mishary first to respect Github 1GB soft limit for repo
+    { name: 'abdulbaset', remoteFolder: 'Abdul_Basit_Murattal_192kbps' },
+    { name: 'shuraim', remoteFolder: 'Saood_ash-Shuraym_128kbps' },
+    { name: 'husary', remoteFolder: 'Husary_128kbps' },
+    { name: 'sudais', remoteFolder: 'Abdurrahmaan_As-Sudais_192kbps' }
 ];
 
 const BASE_URL = 'https://everyayah.com/data';
@@ -78,8 +81,8 @@ async function run() {
                     console.log(`Failed to download ${fileName}: ${e.message}`);
                 }));
 
-                // Limit concurrency to 50
-                if (promises.length >= 50) {
+                // Limit concurrency to 4
+                if (promises.length >= 4) {
                     await Promise.all(promises);
                     promises = [];
                 }
