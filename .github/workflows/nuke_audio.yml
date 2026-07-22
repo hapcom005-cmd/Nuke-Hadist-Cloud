@@ -1,0 +1,30 @@
+name: 🚀 NUKE AUDIO MATRICES (CLOUD DOWNLOADER) 🚀
+
+on:
+  push:
+    paths:
+      - '.github/workflows/nuke_audio.yml'
+
+jobs:
+  download-audio:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Execute Audio Nuke
+        run: node tools/download_audio.js
+        
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Nuke Bot"
+          git config --global user.email "bot@hpcomtik.com"
+          git add QuranHadist/data/audio
+          git commit -m "Auto-download Mishary audio files from EveryAyah" || echo "No changes to commit"
+          git push origin master
